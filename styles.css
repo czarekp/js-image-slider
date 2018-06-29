@@ -8,26 +8,32 @@ body {
 }
 
 #slider {
-    width: 100%;
     height: 400px;
+    width: 600px;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 128px;
+    margin: 128px auto;
     position: relative;
+    overflow-x: hidden;
+    align-items: center;
 }
 
 button {
+    z-index: 2;
     background-color: transparent;
     border: none;
     position: absolute;
-    top: 152px;
     cursor: pointer;
-    color: #0B1241;
+    color: #d3c5c5;
     outline: none;
+}
+
+#next {
+    right: 0;
 }
 
 ion-icon {
@@ -35,6 +41,10 @@ ion-icon {
     height: 96px;
 }
 
-#next {
-    right: 0;
+img {
+    z-index: -1;
+    height: 320px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px 4px #484b60;
 }
