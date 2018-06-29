@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #888DB6;
+}
+
+#slider {
+    width: 100%;
+    height: 400px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 128px;
+    position: relative;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 152px;
+    cursor: pointer;
+    color: #0B1241;
+    outline: none;
+}
+
+ion-icon {
+    width: 96px;
+    height: 96px;
+}
+
+#next {
+    right: 0;
+}
