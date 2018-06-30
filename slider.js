@@ -11,6 +11,7 @@
     const next = document.getElementById('next');
     const prev = document.getElementById('prev');
 
+    prev.style.visibility = 'hidden';
 
     function getX() {
         var matrix = window.getComputedStyle(photos).getPropertyValue('transform').replace(/[^0-9\-.,]/g, '').split(',');
@@ -18,7 +19,26 @@
         return (x === undefined || x === NaN) ? 0 : parseInt(x);
     };
 
+    function enableButtons() {
+        if (getX() === 0) {
+            prev.style.visibility = 'hidden';
+        } else if (getX() === -2240) {
+            next.style.visibility = 'hidden';
+        } else {
+            prev.style.visibility = 'visible';
+            next.style.visibility = 'visible';
+        }
+
+        next.removeAttribute('disabled');
+        prev.removeAttribute('disabled');
+    }
+
     next.addEventListener('click', () => {
+        next.setAttribute('disabled', true);
+        prev.setAttribute('disabled', true);
+
+        window.setTimeout(enableButtons, 500);
+
         photos.animate([
             // keyframes
             {
@@ -36,6 +56,11 @@
     });
 
     prev.addEventListener('click', () => {
+        next.setAttribute('disabled', true);
+        prev.setAttribute('disabled', true);
+
+        window.setTimeout(enableButtons, 500);
+
         photos.animate([
             // keyframes
             {
